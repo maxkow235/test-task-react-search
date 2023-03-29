@@ -1,0 +1,56 @@
+$mainNavHeight: 80px;
+
+body {
+  margin: 0;
+  padding-bottom: 200px;
+}
+.MuiTextField-root {
+  background: #fff;
+  border-radius: 4px;
+}
+.main-page {
+  padding-top: calc(#{$mainNavHeight} + 50px);
+  .product-grid {
+    padding-top: 20px;
+  }
+}
+.sorting-bar {
+  z-index: 7000;
+  position: sticky;
+  top: $mainNavHeight;
+  transition: box-shadow 0.2s, background-color 0.2s;
+
+  &.elevated {
+    box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.2);
+    background-color: rgb(143, 197, 233);
+  }
+
+  .filter-button {
+    display: none;
+    @media only screen and (max-width: 1200px) {
+      display: flex;
+    }
+  }
+}
+.filter-sidebar {
+  @media only screen and (max-width: 1200px) {
+    position: fixed;
+    padding-right: 30px;
+    overflow-y: scroll;
+    padding-bottom: 30px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9000;
+    background-color: #fff;
+    transform: translate(-100%);
+    transition: transform 0.3s;
+    &.open {
+      transform: translate(0);
+    }
+  }
+
+  .price-filter {
+    padding: 10px;
+  }
+}
